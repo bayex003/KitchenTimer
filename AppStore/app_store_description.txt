@@ -1,0 +1,3 @@
+PrepTick is the calm cooking timer built around presets. Line up a grid of timers for every hob, rack, and dish, then start them together or as you go. Keep favourite combinations one tap away, repeat your last set instantly, and rename timers mid-cook when plans change.
+
+Minimal controls and clear typography keep the kitchen focused. Alerts stay helpful without noise so you can concentrate on cooking instead of counting minutes.
