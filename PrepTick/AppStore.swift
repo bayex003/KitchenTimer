@@ -1,0 +1,46 @@
+import Foundation
+import SwiftUI
+
+@MainActor
+class AppStore: ObservableObject {
+    @Published var presets: [Preset] = []
+    @Published var runningTimers: [RunningTimer] = []
+    @Published var settings: Settings = Settings()
+    @Published var lastSet: LastSet?
+
+    @AppStorage("didSeedDefaults") private var didSeedDefaults: Bool = false
+
+    private let presetsKey = "presets"
+    private let runningTimersKey = "runningTimers"
+    private let settingsKey = "settings"
+    private let lastSetKey = "lastSet"
+
+    init() {
+        load()
+    }
+
+    func load() {
+        if !didSeedDefaults {
+            presets = DefaultsSeeder.seedPresets()
+            UserDefaultsStore.save(presets, forKey: presetsKey)
+            didSeedDefaults = true
+        } else {
+            presets = UserDefaultsStore.load([Preset].self, forKey: presetsKey) ?? []
+        }
+
+        runningTimers = UserDefaultsStore.load([RunningTimer].self, forKey: runningTimersKey) ?? []
+        settings = UserDefaultsStore.load(Settings.self, forKey: settingsKey) ?? Settings()
+        lastSet = UserDefaultsStore.load(LastSet.self, forKey: lastSetKey)
+    }
+
+    func save() {
+        UserDefaultsStore.save(presets, forKey: presetsKey)
+        UserDefaultsStore.save(runningTimers, forKey: runningTimersKey)
+        UserDefaultsStore.save(settings, forKey: settingsKey)
+        if let lastSet {
+            UserDefaultsStore.save(lastSet, forKey: lastSetKey)
+        } else {
+            UserDefaultsStore.removeValue(forKey: lastSetKey)
+        }
+    }
+}
