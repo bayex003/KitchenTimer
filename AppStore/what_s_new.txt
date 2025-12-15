@@ -1,0 +1,1 @@
+PrepTick now includes an About screen with version details and support links, plus updated copy to get ready for the App Store.

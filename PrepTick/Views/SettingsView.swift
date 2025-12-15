@@ -37,6 +37,12 @@ struct SettingsView: View {
                     .disabled(!store.settings.alertsEnabled)
                     .accessibilityHint("Mute sounds for alerts while keeping notifications enabled.")
                 }
+
+                Section(header: Text("About")) {
+                    NavigationLink(destination: AboutView()) {
+                        Label("About PrepTick", systemImage: "info.circle")
+                    }
+                }
             }
             .scrollContentBackground(.hidden)
             .background(Color(.systemGroupedBackground))

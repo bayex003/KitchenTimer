@@ -1,0 +1,8 @@
+1) Home grid — Headline: "Preset-first grid" — Subtext: "Line up timers for every dish" — Show multiple preset tiles ready to start.
+2) Active timers — Headline: "Cook without chaos" — Subtext: "Track several dishes at once" — Show at least 3 running timers in the grid.
+3) Repeat last set — Headline: "One tap repeat" — Subtext: "Restart your previous round" — Show the repeat last set card available.
+4) Favourites — Headline: "Favourite combos" — Subtext: "Keep go-to sets close" — Show favourite presets pinned or highlighted.
+5) Rename mid-cook — Headline: "Adjust on the fly" — Subtext: "Rename timers while they run" — Show editing a timer name during an active session.
+6) Preset editor — Headline: "Quick setup" — Subtext: "Create presets in seconds" — Show the preset creation/editing screen.
+7) Notifications — Headline: "Helpful alerts" — Subtext: "Stay on track without noise" — Show alert settings with options like silent mode.
+8) Onboarding — Headline: "Ready in moments" — Subtext: "Learn the gestures fast" — Show onboarding tips or first-run guidance.
